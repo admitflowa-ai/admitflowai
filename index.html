@@ -3,569 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdmitFlow AI | Admission Growth OS</title>
+<title>AdmitFlow AI — Admission Growth OS</title>
 <meta name="description" content="Recover Lost Enquiries. Convert More Admissions. AI-powered Admission Growth OS for coaching institutes.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-font-family:Inter,Arial,Helvetica,sans-serif;
-background:#06111f;
-color:#f7fbff;
-line-height:1.6;
-}
-a{text-decoration:none;color:inherit}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#071321;color:#f5f9fc;line-height:1.6}
+a{text-decoration:none}
 .container{width:min(1160px,92%);margin:auto}
 
-header{
-position:sticky;
-top:0;
-z-index:50;
-background:rgba(6,17,31,.88);
-backdrop-filter:blur(14px);
-border-bottom:1px solid #183047;
-}
-
-.nav{
-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:21px;
-font-weight:800;
-letter-spacing:-.5px;
-}
-
-.brand img{
-width:42px;
-height:42px;
-object-fit:contain;
-border-radius:9px;
-}
-
-.brand span{color:#36d7ff}
-
-.navlinks{
-display:flex;
-gap:28px;
-color:#aebfd0;
-font-size:14px;
-}
-
-.navlinks a:hover{color:#45d9ff}
-
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:13px 20px;
-border-radius:9px;
-font-weight:750;
-font-size:14px;
-transition:.2s;
-cursor:pointer;
-border:0;
-}
-
-.btn-primary{
-background:#2ed4f5;
-color:#03111c;
-}
-
-.btn-primary:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 30px rgba(46,212,245,.22);
-}
-
-.btn-outline{
-border:1px solid #2b4962;
-color:#fff;
-background:transparent;
-margin-left:8px;
-}
-
-.btn-outline:hover{border-color:#39d7fa}
-
-.hero{
-padding:95px 0 90px;
-overflow:hidden;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.eyebrow{
-display:inline-flex;
-padding:7px 12px;
-border:1px solid #24516a;
-border-radius:30px;
-font-size:11px;
-font-weight:800;
-letter-spacing:1.5px;
-color:#55dcff;
-margin-bottom:20px;
-}
-
-h1{
-font-size:clamp(43px,6vw,70px);
-line-height:1.02;
-letter-spacing:-3.5px;
-margin-bottom:24px;
-}
-
-.gradient{
-background:linear-gradient(90deg,#fff,#48d9ff);
--webkit-background-clip:text;
-color:transparent;
-}
-
-.hero-text{
-font-size:18px;
-color:#aebfd0;
-max-width:650px;
-margin-bottom:30px;
-}
-
-.micro{
-font-size:12px;
-color:#71879b;
-margin-top:16px;
-}
-
-.dashboard{
-background:#0b1929;
-border:1px solid #23415a;
-border-radius:20px;
-padding:20px;
-box-shadow:0 30px 90px rgba(0,0,0,.35);
-}
-
-.dash-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.dash-head strong{font-size:16px}
-.live{
-font-size:10px;
-color:#45e0a1;
-border:1px solid #245441;
-padding:5px 8px;
-border-radius:20px;
-}
-
-.metrics{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.metric{
-background:#0e2134;
-border:1px solid #1d3b54;
-padding:17px;
-border-radius:12px;
-}
-
-.metric small{color:#849aaf;font-size:11px}
-.metric strong{display:block;font-size:28px;margin-top:4px}
-.green{color:#42df9e;font-size:11px}
-
-.ai-action{
-margin-top:14px;
-background:linear-gradient(135deg,#102b3e,#0c2031);
-border:1px solid #19627b;
-padding:17px;
-border-radius:13px;
-}
-
-.ai-action small{
-color:#4ddcff;
-font-size:10px;
-font-weight:800;
-letter-spacing:1px;
-}
-
-.ai-action strong{
-display:block;
-margin:5px 0;
-}
-
-.ai-action p{
-font-size:13px;
-color:#a9bdcc;
-}
-
-section{padding:95px 0}
-
-.dark{background:#081624}
-
-.label{
-font-size:11px;
-font-weight:850;
-letter-spacing:2px;
-color:#39d8fa;
-text-transform:uppercase;
-margin-bottom:13px;
-}
-
-h2{
-font-size:clamp(31px,4vw,48px);
-line-height:1.1;
-letter-spacing:-1.7px;
-margin-bottom:18px;
-}
-
-.sub{
-color:#9cafc1;
-max-width:760px;
-font-size:16px;
-}
-
-.problem-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:42px;
-}
-
-.problem-item{
-padding:20px;
-background:#0b1b2c;
-border:1px solid #1b354d;
-border-radius:12px;
-color:#c4d0db;
-}
-
-.problem-item span{
-color:#36d7f7;
-font-weight:900;
-margin-right:10px;
-}
-
-.approach{text-align:center}
-
-.quote{
-font-size:26px;
-font-weight:650;
-max-width:850px;
-margin:30px auto;
-color:#dce8f1;
-}
-
-.funnel{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-gap:8px;
-margin-top:35px;
-}
-
-.funnel div{
-background:#0d2134;
-border:1px solid #24445c;
-padding:13px 17px;
-border-radius:9px;
-color:#bdd0df;
-}
-
-.funnel b{
-color:#35d7fa;
-font-size:17px;
-}
-
-.solution-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-margin-top:42px;
-}
-
-.solution{
-background:#0b1b2b;
-border:1px solid #1c374f;
-border-radius:14px;
-padding:23px;
-transition:.2s;
-}
-
-.solution:hover{
-transform:translateY(-4px);
-border-color:#2a6984;
-}
-
-.solution-number{
-font-size:11px;
-font-weight:800;
-color:#38d7f7;
-}
-
-.solution h3{
-font-size:17px;
-margin:9px 0;
-}
-
-.solution p{
-font-size:13px;
-color:#8fa5b8;
-}
-
-.human-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.flow-box{
-display:grid;
-gap:10px;
-}
-
-.flow-box div{
-padding:18px;
-background:#0c2032;
-border:1px solid #25465e;
-border-radius:11px;
-}
-
-.flow-box strong{display:block}
-.flow-box small{color:#8fa4b8}
-
-.steps{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:42px;
-}
-
-.step{
-background:#0b1b2b;
-border:1px solid #1d374e;
-border-radius:14px;
-padding:24px;
-}
-
-.step b{
-color:#3bd7f7;
-font-size:11px;
-letter-spacing:1px;
-}
-
-.step h3{margin:8px 0}
-.step p{font-size:13px;color:#8fa5b8}
-
-.leakage-box{
-margin-top:40px;
-padding:25px;
-background:#0b1928;
-border:1px solid #27445b;
-border-radius:18px;
-}
-
-.sample{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.sample small{
-color:#f7c95d;
-font-weight:800;
-font-size:10px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:10px;
-}
-
-.stat{
-background:#0e2235;
-padding:18px 10px;
-border-radius:10px;
-text-align:center;
-}
-
-.stat strong{
-display:block;
-font-size:23px;
-}
-
-.stat small{
-color:#8499ad;
-font-size:10px;
-}
-
-.leak-question{
-margin-top:22px;
-color:#b7c7d4;
-font-size:16px;
-}
-
-.diff-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.stack{
-display:grid;
-gap:10px;
-}
-
-.stack div{
-padding:17px 20px;
-background:#0c2032;
-border:1px solid #25445d;
-border-radius:10px;
-}
-
-.stack div:last-child{
-border-color:#36d7f7;
-color:#43dcfa;
-font-weight:800;
-}
-
-.checklist{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin:30px 0;
-}
-
-.check{
-padding:13px 15px;
-background:#0b1b2b;
-border:1px solid #1d374e;
-border-radius:9px;
-color:#b8c8d5;
-}
-
-.check span{color:#38d8f7;margin-right:8px}
-
-.audience{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:13px;
-margin-top:35px;
-}
-
-.audience div{
-padding:18px;
-background:#0b1b2b;
-border:1px solid #1c374e;
-border-radius:12px;
-font-weight:650;
-}
-
-.founder{
-display:grid;
-grid-template-columns:190px 1fr;
-gap:35px;
-align-items:center;
-max-width:900px;
-}
-
-.founder-photo{
-width:160px;
-height:160px;
-border-radius:50%;
-background:linear-gradient(135deg,#102c42,#0a1a2a);
-border:1px solid #29516b;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:48px;
-font-weight:800;
-color:#45dafa;
-}
-
-.founder h3{
-font-size:27px;
-margin-bottom:3px;
-}
-
-.role{
-color:#41d9fa;
-font-size:13px;
-font-weight:700;
-}
-
-.founder p{
-color:#9fb1c1;
-margin-top:16px;
-}
-
-.cta{
-padding:80px 0;
-}
-
-.cta-box{
-text-align:center;
-padding:65px 25px;
-border:1px solid #24526b;
-border-radius:22px;
-background:radial-gradient(circle at center,#103047,#091b2b 65%);
-}
-
-.cta-box p{
-max-width:700px;
-margin:0 auto 28px;
-color:#9fb3c3;
-}
-
-footer{
-border-top:1px solid #172e43;
-padding:30px 0;
-color:#8195a8;
-font-size:13px;
-}
-
-.footer{
-display:flex;
-justify-content:space-between;
-gap:25px;
-}
-
-.footer strong{color:#fff}
+header{position:sticky;top:0;z-index:10;background:rgba(7,19,33,.94);border-bottom:1px solid #1c3449}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:white;font-weight:800;font-size:20px}
+.brand img{width:44px;height:44px;object-fit:contain;border-radius:8px}
+.brand em{font-style:normal;color:#39d8fa}
+
+.navlinks{display:flex;gap:25px;color:#aebdca;font-size:14px}
+.navlinks a:hover{color:#39d8fa}
+
+.btn{display:inline-block;padding:13px 19px;border-radius:8px;font-weight:750;font-size:14px}
+.primary{background:#36d7f5;color:#03121d}
+.outline{border:1px solid #31506a;color:white;margin-left:8px}
+
+.hero{padding:90px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.tag{display:inline-block;color:#42dafa;border:1px solid #24556d;border-radius:30px;padding:6px 12px;font-size:10px;font-weight:800;letter-spacing:1.5px}
+h1{font-size:clamp(43px,6vw,68px);line-height:1.02;letter-spacing:-3px;margin:20px 0}
+.gradient{color:#43dafa}
+.lead{font-size:18px;color:#a8bac8;max-width:650px}
+.note{font-size:12px;color:#73889b;margin-top:14px}
+
+.dashboard{background:#0b1b2c;border:1px solid #27445b;border-radius:18px;padding:20px;box-shadow:0 25px 70px #0006}
+.dash-title{display:flex;justify-content:space-between;margin-bottom:18px}
+.sample{font-size:10px;color:#42dafa;border:1px solid #23556b;padding:4px 8px;border-radius:20px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#0e2235;border:1px solid #203d54;border-radius:10px;padding:17px}
+.card small{color:#8196a8;font-size:10px}
+.card strong{display:block;font-size:27px}
+.action{margin-top:13px;background:#10283b;border:1px solid #22617a;padding:16px;border-radius:10px}
+.action small{color:#3bd9fa;font-weight:800}
+.action p{margin:5px 0;color:#aabdc9;font-size:13px}
+
+section{padding:90px 0}
+.dark{background:#091827}
+.label{color:#39d8fa;font-size:10px;font-weight:850;letter-spacing:2px;text-transform:uppercase}
+h2{font-size:clamp(31px,4vw,47px);line-height:1.1;letter-spacing:-1.5px;margin:12px 0 17px}
+.sub{color:#9fb2c2;max-width:760px}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+.box{background:#0b1c2d;border:1px solid #1d394f;border-radius:13px;padding:21px}
+.box b{color:#3bd8fa;font-size:10px}
+.box h3{font-size:17px;margin:7px 0}
+.box p{font-size:13px;color:#8fa5b6;margin:0}
+
+.problem{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:35px}
+.problem div{background:#0b1c2d;border:1px solid #1d394f;padding:17px;border-radius:9px;color:#b9c8d3}
+.problem span{color:#3bd8fa;font-weight:900;margin-right:8px}
+
+.center{text-align:center}
+.quote{font-size:25px;font-weight:650;max-width:800px;margin:28px auto}
+.funnel{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:30px}
+.funnel span{padding:12px 16px;background:#0d2134;border:1px solid #25465d;border-radius:8px;color:#bdccd7}
+.funnel b{color:#3bd8fa}
+
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.steps{display:grid;gap:10px}
+.steps div{background:#0c2032;border:1px solid #25445d;padding:16px;border-radius:9px}
+.steps strong{display:block}
+.steps small{color:#879dad}
+
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+.six div{background:#0b1c2d;border:1px solid #1d394f;border-radius:12px;padding:22px}
+.six b{color:#3bd8fa;font-size:11px}
+.six h3{margin:7px 0}
+.six p{color:#8fa5b6;font-size:13px}
+
+.leak{background:#0b1b2b;border:1px solid #27465d;border-radius:16px;padding:22px;margin-top:35px}
+.leak-head{display:flex;justify-content:space-between;margin-bottom:18px}
+.warning{color:#f1c75b;font-size:10px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+.stat{background:#0e2235;border-radius:9px;padding:15px 8px;text-align:center}
+.stat strong{display:block;font-size:22px}
+.stat small{color:#8297a9;font-size:9px}
+
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.stack{display:grid;gap:9px}
+.stack div{background:#0c2032;border:1px solid #25445d;padding:16px;border-radius:9px}
+.stack div:last-child{border-color:#36d8fa;color:#36d8fa;font-weight:800}
+
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:28px 0}
+.checks div{background:#0b1c2d;border:1px solid #1d394f;padding:12px;border-radius:8px;color:#b9c8d3}
+.checks span{color:#39d8fa}
+
+.audience{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.audience div{background:#0b1c2d;border:1px solid #1d394f;padding:17px;border-radius:10px;font-weight:650}
+
+.founder{max-width:850px}
+.founder h3{font-size:29px;margin:8px 0 0}
+.role{color:#3bd8fa;font-size:13px;font-weight:700}
+.founder p{color:#9fb2c2;max-width:800px}
+
+.cta{text-align:center}
+.cta-box{background:radial-gradient(circle,#10334a,#091a2a 65%);border:1px solid #28556d;border-radius:20px;padding:60px 25px}
+.cta-box p{color:#9fb2c2;max-width:700px;margin:0 auto 25px}
+
+footer{border-top:1px solid #193247;padding:30px 0;color:#8296a8;font-size:13px}
+.footer{display:flex;justify-content:space-between;gap:20px}
+.footer strong{color:white}
+.footer a{color:#9fb2c2}
 
 @media(max-width:900px){
 .navlinks{display:none}
-.hero-grid,.human-grid,.diff-grid{grid-template-columns:1fr}
-.solution-grid{grid-template-columns:1fr 1fr}
-.steps{grid-template-columns:1fr 1fr}
+.hero-grid,.flow,.diff{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr 1fr}
+.six{grid-template-columns:1fr 1fr}
 .audience{grid-template-columns:1fr 1fr}
 .stats{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:600px){
-.nav .btn{display:none}
 .hero{padding:65px 0}
-h1{letter-spacing:-2.4px}
-.btn{width:100%;margin:6px 0!important}
-.problem-grid,.solution-grid,.steps,.audience,.checklist{grid-template-columns:1fr}
+h1{letter-spacing:-2px}
+.grid,.problem,.six,.audience,.checks{grid-template-columns:1fr}
 .stats{grid-template-columns:1fr 1fr}
-.founder{grid-template-columns:1fr;text-align:center}
-.founder-photo{margin:auto}
+.btn{display:block;text-align:center;margin:8px 0}
+.outline{margin-left:0}
 .footer{flex-direction:column}
 }
 </style>
@@ -574,92 +137,72 @@ h1{letter-spacing:-2.4px}
 <body>
 
 <header>
-<nav class="container nav">
+<div class="container nav">
 
-<a class="brand" href="#">
-<img src="logo.jpeg" alt="AdmitFlow AI Logo">
-<span>AdmitFlow <span>AI</span></span>
+<a href="#" class="brand">
+<img src="logo.jpeg" alt="AdmitFlow AI">
+<span>AdmitFlow <em>AI</em></span>
 </a>
 
-<div class="navlinks">
+<nav class="navlinks">
 <a href="#product">Product</a>
 <a href="#how">How It Works</a>
 <a href="#solutions">Solutions</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
-</div>
-
-<a class="btn btn-primary" href="#diagnostic">Book Free Diagnostic</a>
-
 </nav>
-</header>
 
-<main>
+<a class="btn primary" href="#diagnostic">Book Free Diagnostic</a>
+
+</div>
+</header>
 
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
-<div class="eyebrow">AI-POWERED ADMISSION GROWTH OS</div>
+<span class="tag">AI-POWERED ADMISSION GROWTH OS</span>
 
 <h1>
 Recover Lost Enquiries.<br>
 <span class="gradient">Convert More Admissions.</span>
 </h1>
 
-<p class="hero-text">
+<p class="lead">
 AI-powered Admission Growth OS for Coaching Institutes.
 Your institute may already be generating enough enquiries.
 The bigger question is: how many potential admissions are being lost after the enquiry comes in?
 </p>
 
-<a class="btn btn-primary" href="#diagnostic">Book Free Admission Funnel Diagnostic</a>
+<br>
 
-<a class="btn btn-outline" href="https://wa.me/919792422130?text=Hi%20AdmitFlow%20AI%2C%20I%20want%20to%20know%20more%20about%20the%20Admission%20Growth%20Diagnostic." target="_blank">
+<a class="btn primary" href="#diagnostic">Book Free Admission Funnel Diagnostic</a>
+
+<a class="btn outline" target="_blank"
+href="https://wa.me/919792422130?text=Hi%20AdmitFlow%20AI%2C%20I%20want%20to%20know%20more%20about%20the%20Admission%20Growth%20Diagnostic.">
 Talk to an Admission Growth Expert
 </a>
 
-<div class="micro">No long-term commitment. Start with your existing enquiry data.</div>
+<div class="note">No long-term commitment. Start with your existing enquiry data.</div>
 </div>
 
 <div class="dashboard">
 
-<div class="dash-head">
+<div class="dash-title">
 <strong>Admission Growth Dashboard</strong>
-<span class="live">● SAMPLE VIEW</span>
+<span class="sample">ILLUSTRATIVE</span>
 </div>
 
-<div class="metrics">
-
-<div class="metric">
-<small>Total Enquiries</small>
-<strong>1,000</strong>
-<span class="green">Pipeline volume</span>
+<div class="cards">
+<div class="card"><small>Total Enquiries</small><strong>1,000</strong></div>
+<div class="card"><small>High-Intent Opportunities</small><strong>64</strong></div>
+<div class="card"><small>Follow-ups Due</small><strong>86</strong></div>
+<div class="card"><small>Potential Recovery</small><strong>38</strong></div>
 </div>
 
-<div class="metric">
-<small>High-Intent Opportunities</small>
-<strong>64</strong>
-<span class="green">Priority leads</span>
-</div>
-
-<div class="metric">
-<small>Follow-ups Due</small>
-<strong>86</strong>
-<span class="green">Action required</span>
-</div>
-
-<div class="metric">
-<small>Potential Recovery Leads</small>
-<strong>38</strong>
-<span class="green">Recovery queue</span>
-</div>
-
-</div>
-
-<div class="ai-action">
+<div class="action">
 <small>AI NEXT-BEST ACTION</small>
-<strong>Lead #L002 · High Intent · Score 80</strong>
+<strong>Lead #L002 · Intent Score 80</strong>
 <p>Call today → Address fee objection → Parent follow-up</p>
 </div>
 
@@ -671,46 +214,38 @@ Talk to an Admission Growth Expert
 <div class="container">
 
 <div class="label">The Problem</div>
-
 <h2>You May Not Have a Lead Problem.<br>You May Have a Conversion Leakage Problem.</h2>
 
-<p class="sub">
-Coaching institutes spend money generating enquiries, but potential admissions can be lost after an enquiry enters the pipeline.
-</p>
+<p class="sub">Coaching institutes spend money generating enquiries, but potential admissions can be lost after an enquiry enters the pipeline.</p>
 
-<div class="problem-grid">
-
-<div class="problem-item"><span>01</span>Delayed first response</div>
-<div class="problem-item"><span>02</span>Inconsistent follow-ups</div>
-<div class="problem-item"><span>03</span>High-intent leads not being prioritised</div>
-<div class="problem-item"><span>04</span>Counsellor performance gaps</div>
-<div class="problem-item"><span>05</span>Student / parent objections</div>
-<div class="problem-item"><span>06</span>No systematic lost-lead recovery</div>
-<div class="problem-item"><span>07</span>Limited conversion visibility</div>
-<div class="problem-item"><span>08</span>Revenue leakage across the funnel</div>
-
+<div class="problem">
+<div><span>01</span>Delayed first response</div>
+<div><span>02</span>Inconsistent follow-ups</div>
+<div><span>03</span>High-intent leads not prioritised</div>
+<div><span>04</span>Counsellor performance gaps</div>
+<div><span>05</span>Student / parent objections</div>
+<div><span>06</span>No systematic lost-lead recovery</div>
+<div><span>07</span>Limited conversion visibility</div>
+<div><span>08</span>Revenue leakage across the funnel</div>
 </div>
 
 </div>
 </section>
 
-<section>
-<div class="container approach">
+<section class="center">
+<div class="container">
 
 <div class="label">Our Approach</div>
-
 <h2>Don't Generate More Leads Until You Understand the Leads You Already Have.</h2>
 
-<div class="quote">
-“Where are your existing enquiries getting lost?”
-</div>
+<div class="quote">“Where are your existing enquiries getting lost?”</div>
 
 <div class="funnel">
-<div>Enquiry</div><b>→</b>
-<div>Contact</div><b>→</b>
-<div>Counselling</div><b>→</b>
-<div>Follow-up</div><b>→</b>
-<div>Admission</div>
+<span>Enquiry</span><b>→</b>
+<span>Contact</span><b>→</b>
+<span>Counselling</span><b>→</b>
+<span>Follow-up</span><b>→</b>
+<span>Admission</span>
 </div>
 
 </div>
@@ -720,39 +255,17 @@ Coaching institutes spend money generating enquiries, but potential admissions c
 <div class="container">
 
 <div class="label">What Is AdmitFlow AI?</div>
-
 <h2>Admission Growth OS + Managed Growth Service</h2>
 
 <p class="sub">
-CRM + AI Intelligence + Human Growth Support. AdmitFlow AI combines technology and human execution to help institutes improve enquiry-to-admission conversion.
+CRM + AI Intelligence + Human Growth Support. AdmitFlow AI combines technology and human execution to improve enquiry-to-admission conversion.
 </p>
 
-<div class="solution-grid">
-
-<div class="solution">
-<span class="solution-number">01</span>
-<h3>Which lead first?</h3>
-<p>Prioritise enquiries based on intent and opportunity.</p>
-</div>
-
-<div class="solution">
-<span class="solution-number">02</span>
-<h3>Why isn't it converting?</h3>
-<p>Identify objections, follow-up gaps and conversion blockers.</p>
-</div>
-
-<div class="solution">
-<span class="solution-number">03</span>
-<h3>Which lost leads matter?</h3>
-<p>Identify valuable enquiries worth recovering.</p>
-</div>
-
-<div class="solution">
-<span class="solution-number">04</span>
-<h3>What next?</h3>
-<p>Guide counsellors toward the next best action.</p>
-</div>
-
+<div class="grid">
+<div class="box"><b>01</b><h3>Which lead first?</h3><p>Prioritise high-intent opportunities.</p></div>
+<div class="box"><b>02</b><h3>Why isn't it converting?</h3><p>Identify objections and conversion blockers.</p></div>
+<div class="box"><b>03</b><h3>Which lost leads matter?</h3><p>Identify valuable recovery opportunities.</p></div>
+<div class="box"><b>04</b><h3>What next?</h3><p>Guide counsellors toward the next best action.</p></div>
 </div>
 
 </div>
@@ -762,73 +275,49 @@ CRM + AI Intelligence + Human Growth Support. AdmitFlow AI combines technology a
 <div class="container">
 
 <div class="label">Core Solutions</div>
-
 <h2>One Admission Growth System.</h2>
-
 <p class="sub">Built around the gaps between enquiry and admission.</p>
 
-<div class="solution-grid">
+<div class="grid">
 
-<div class="solution"><span class="solution-number">01</span><h3>Lead & Funnel Intelligence</h3><p>Track enquiry → contact → counselling → follow-up → admission.</p></div>
+<div class="box"><b>01</b><h3>Lead & Funnel Intelligence</h3><p>Track enquiry → contact → counselling → follow-up → admission.</p></div>
 
-<div class="solution"><span class="solution-number">02</span><h3>AI Lead Prioritisation</h3><p>Identify high-intent and high-value opportunities.</p></div>
+<div class="box"><b>02</b><h3>AI Lead Prioritisation</h3><p>Identify high-intent and high-value opportunities.</p></div>
 
-<div class="solution"><span class="solution-number">03</span><h3>Follow-up Intelligence</h3><p>Track follow-ups due, missed follow-ups, engagement and conversion.</p></div>
+<div class="box"><b>03</b><h3>Follow-up Intelligence</h3><p>Track due, missed, engagement and conversion.</p></div>
 
-<div class="solution"><span class="solution-number">04</span><h3>Lost Lead Recovery</h3><p>Identify valuable lost enquiries and recommend recovery actions.</p></div>
+<div class="box"><b>04</b><h3>Lost Lead Recovery</h3><p>Identify valuable lost enquiries and recovery actions.</p></div>
 
-<div class="solution"><span class="solution-number">05</span><h3>Counsellor Intelligence</h3><p>Track counsellor activity, conversion and follow-up performance.</p></div>
+<div class="box"><b>05</b><h3>Counsellor Intelligence</h3><p>Track activity, conversion and follow-up performance.</p></div>
 
-<div class="solution"><span class="solution-number">06</span><h3>Call & Objection Intelligence</h3><p>Understand fee, parent approval, competitor, timing and course-fit objections.</p></div>
+<div class="box"><b>06</b><h3>Call & Objection Intelligence</h3><p>Understand fee, parent approval, competitor, timing and course-fit objections.</p></div>
 
-<div class="solution"><span class="solution-number">07</span><h3>AI Next-Best Action</h3><p>Tell counsellors who to contact, why to contact them and what to do next.</p></div>
+<div class="box"><b>07</b><h3>AI Next-Best Action</h3><p>Tell counsellors who to contact, why and what to do next.</p></div>
 
-<div class="solution"><span class="solution-number">08</span><h3>Revenue Leakage Reporting</h3><p>Show management where potential admissions are being lost.</p></div>
+<div class="box"><b>08</b><h3>Revenue Leakage Reporting</h3><p>Show management where potential admissions are being lost.</p></div>
 
 </div>
+
 </div>
 </section>
 
 <section class="dark">
-<div class="container human-grid">
+<div class="container flow">
 
 <div>
 <div class="label">Human + AI</div>
-
 <h2>AI Finds the Opportunity.<br>Humans Drive the Conversion.</h2>
-
 <p class="sub">
 AI analyses lead behaviour, follow-ups, objections, conversion signals and lost-lead patterns. The Human Growth Manager turns those insights into practical sales and admission actions.
 </p>
 </div>
 
-<div class="flow-box">
-
-<div>
-<strong>AI Analysis</strong>
-<small>Find signals and opportunities</small>
-</div>
-
-<div>
-<strong>Opportunity</strong>
-<small>Prioritise what matters</small>
-</div>
-
-<div>
-<strong>Human Growth Manager</strong>
-<small>Turn insight into action</small>
-</div>
-
-<div>
-<strong>Counsellor Action</strong>
-<small>Follow-up and conversion</small>
-</div>
-
-<div>
-<strong>Admission Growth</strong>
-<small>Measure and improve</small>
-</div>
-
+<div class="steps">
+<div><strong>AI Analysis</strong><small>Find signals and opportunities</small></div>
+<div><strong>Opportunity</strong><small>Prioritise what matters</small></div>
+<div><strong>Human Growth Manager</strong><small>Turn insight into action</small></div>
+<div><strong>Counsellor Action</strong><small>Follow-up and conversion</small></div>
+<div><strong>Admission Growth</strong><small>Measure and improve</small></div>
 </div>
 
 </div>
@@ -838,22 +327,16 @@ AI analyses lead behaviour, follow-ups, objections, conversion signals and lost-
 <div class="container">
 
 <div class="label">How It Works</div>
-
 <h2>From Enquiry Data to Admission Growth.</h2>
 
-<div class="steps">
+<div class="six">
 
-<div class="step"><b>01 — CONNECT</b><h3>Understand</h3><p>Understand the current admission process and available data.</p></div>
-
-<div class="step"><b>02 — ANALYSE</b><h3>Analyse</h3><p>Analyse enquiries, counselling, follow-ups and conversions.</p></div>
-
-<div class="step"><b>03 — IDENTIFY LEAKAGE</b><h3>Find Leakage</h3><p>Find where potential admissions are being lost.</p></div>
-
-<div class="step"><b>04 — PRIORITISE</b><h3>Find Opportunities</h3><p>Identify high-intent and recovery opportunities.</p></div>
-
-<div class="step"><b>05 — TAKE ACTION</b><h3>Act</h3><p>Give counsellors clear next actions and recovery strategies.</p></div>
-
-<div class="step"><b>06 — MEASURE</b><h3>Improve</h3><p>Track conversion improvement and recovered opportunities.</p></div>
+<div><b>01 — CONNECT</b><h3>Understand</h3><p>Understand current admission process and available data.</p></div>
+<div><b>02 — ANALYSE</b><h3>Analyse</h3><p>Analyse enquiries, counselling, follow-ups and conversions.</p></div>
+<div><b>03 — IDENTIFY LEAKAGE</b><h3>Find Leakage</h3><p>Find where potential admissions are being lost.</p></div>
+<div><b>04 — PRIORITISE</b><h3>Find Opportunities</h3><p>Identify high-intent and recovery opportunities.</p></div>
+<div><b>05 — TAKE ACTION</b><h3>Act</h3><p>Give counsellors clear next actions and recovery strategies.</p></div>
+<div><b>06 — MEASURE</b><h3>Improve</h3><p>Track conversion improvement and recovered opportunities.</p></div>
 
 </div>
 </div>
@@ -863,55 +346,41 @@ AI analyses lead behaviour, follow-ups, objections, conversion signals and lost-
 <div class="container">
 
 <div class="label">Admission Leakage Dashboard</div>
-
 <h2>Your Admission Funnel Tells a Story.<br>We Help You Find the Missing Revenue.</h2>
 
-<div class="leakage-box">
+<div class="leak">
 
-<div class="sample">
+<div class="leak-head">
 <strong>Sample Admission Funnel</strong>
-<small>SAMPLE — ILLUSTRATIVE DATA</small>
+<span class="warning">SAMPLE — ILLUSTRATIVE DATA</span>
 </div>
 
 <div class="stats">
-
 <div class="stat"><strong>1,000</strong><small>Total Enquiries</small></div>
 <div class="stat"><strong>780</strong><small>Contacted</small></div>
 <div class="stat"><strong>420</strong><small>Counselled</small></div>
 <div class="stat"><strong>86</strong><small>Follow-ups Due</small></div>
 <div class="stat"><strong>64</strong><small>High-Intent</small></div>
 <div class="stat"><strong>52</strong><small>Admissions</small></div>
-
 </div>
 
-<div class="leak-question">
-<strong>Where did the other enquiries go?</strong><br>
-That's the question AdmitFlow AI helps management investigate.
-</div>
+<br>
+<strong>Where did the other enquiries go?</strong>
+<p class="sub">That's the question AdmitFlow AI helps management investigate.</p>
 
 </div>
-
 </div>
 </section>
 
-<section id="difference">
-<div class="container diff-grid">
+<section>
+<div class="container diff">
 
 <div>
 <div class="label">The Difference</div>
-
 <h2>Not Just Another CRM.</h2>
-
-<p class="sub">
-Most systems help you store and manage leads. AdmitFlow AI is designed around a different question:
-</p>
-
+<p class="sub">Most systems help you store and manage leads. AdmitFlow AI is designed around a different question:</p>
 <br>
-
-<p>
 <strong>“How can we recover more admissions from the enquiries you already generated?”</strong>
-</p>
-
 </div>
 
 <div class="stack">
@@ -930,33 +399,27 @@ Most systems help you store and manage leads. AdmitFlow AI is designed around a 
 <div class="container">
 
 <div class="label">Free Diagnostic</div>
-
 <h2>Find Where Your Admissions Are Being Lost.</h2>
 
-<p class="sub">
-In the initial diagnostic, we review the key parts of your enquiry-to-admission process.
-</p>
+<p class="sub">In the initial diagnostic, we review the key parts of your enquiry-to-admission process.</p>
 
-<div class="checklist">
-
-<div class="check"><span>✓</span>Monthly enquiry volume</div>
-<div class="check"><span>✓</span>Lead sources</div>
-<div class="check"><span>✓</span>Contact rate</div>
-<div class="check"><span>✓</span>Counselling process</div>
-<div class="check"><span>✓</span>Follow-up process</div>
-<div class="check"><span>✓</span>Conversion</div>
-<div class="check"><span>✓</span>Lost reasons</div>
-<div class="check"><span>✓</span>Counsellor performance</div>
-
+<div class="checks">
+<div><span>✓</span> Monthly enquiry volume</div>
+<div><span>✓</span> Lead sources</div>
+<div><span>✓</span> Contact rate</div>
+<div><span>✓</span> Counselling process</div>
+<div><span>✓</span> Follow-up process</div>
+<div><span>✓</span> Conversion</div>
+<div><span>✓</span> Lost reasons</div>
+<div><span>✓</span> Counsellor performance</div>
 </div>
 
-<p class="sub">
-<strong>First diagnose the problem. Then decide the solution.</strong>
-</p>
+<p class="sub"><strong>First diagnose the problem. Then decide the solution.</strong></p>
 
 <br>
 
-<a class="btn btn-primary" href="https://wa.me/919792422130?text=Hi%20Javed%2C%20I%20want%20to%20book%20a%20Free%20Admission%20Funnel%20Diagnostic%20for%20my%20institute." target="_blank">
+<a class="btn primary" target="_blank"
+href="https://wa.me/919792422130?text=Hi%20Javed%2C%20I%20want%20to%20book%20a%20Free%20Admission%20Funnel%20Diagnostic.">
 Book Your Free Admission Funnel Diagnostic
 </a>
 
@@ -967,11 +430,9 @@ Book Your Free Admission Funnel Diagnostic
 <div class="container">
 
 <div class="label">Who We Help</div>
-
 <h2>Built for Education Businesses With an Active Enquiry Pipeline.</h2>
 
 <div class="audience">
-
 <div>Coaching Institutes</div>
 <div>JEE / NEET Institutes</div>
 <div>UPSC / Government Exam Institutes</div>
@@ -979,7 +440,6 @@ Book Your Free Admission Funnel Diagnostic
 <div>Skill & Vocational Training Institutes</div>
 <div>Professional Training Institutes</div>
 <div>Multi-Branch Education Businesses</div>
-
 </div>
 
 </div>
@@ -988,19 +448,59 @@ Book Your Free Admission Funnel Diagnostic
 <section class="dark" id="about">
 <div class="container founder">
 
-<div class="founder-photo">JK</div>
-
-<div>
-
 <div class="label">Founder</div>
-
 <h3>Javed Khan</h3>
-
 <div class="role">Founder — AdmitFlow AI</div>
 
-<p>
-<strong>EdTech | SaaS | B2B Sales | Business Growth</strong>
-</p>
+<p><strong>EdTech | SaaS | B2B Sales | Business Growth</strong></p>
 
 <p>
-“I don't believe every institute needs more leads. Before increasing marketing spend, management
+“I don't believe every institute needs more leads. Before increasing marketing spend, management should understand how effectively their existing enquiries are being converted — and where valuable admissions are being lost.”
+</p>
+
+</div>
+</section>
+
+<section class="cta" id="contact">
+<div class="container">
+
+<div class="cta-box">
+
+<div class="label">Start With Your Existing Enquiries</div>
+
+<h2>You Already Paid for the Enquiry.<br>Now Let's See How Many More Admissions It Can Generate.</h2>
+
+<p>Book a free Admission Funnel Diagnostic and understand where your current enquiry pipeline may be losing opportunities.</p>
+
+<a class="btn primary" target="_blank"
+href="https://wa.me/919792422130?text=Hi%20Javed%2C%20I%20want%20to%20book%20a%20Free%20Admission%20Funnel%20Diagnostic.">
+Book a Free Admission Funnel Diagnostic
+</a>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container footer">
+
+<div>
+<strong>AdmitFlow AI</strong><br>
+AI-Powered Admission Growth Partner for Coaching Institutes
+</div>
+
+<div>
+<a href="tel:+919792422130">+91 9792422130</a><br>
+<a href="mailto:admitflowa@gmail.com">admitflowa@gmail.com</a>
+</div>
+
+<div>
+Javed Khan — Founder<br>
+Privacy Policy &nbsp; | &nbsp; Terms
+</div>
+
+</div>
+</footer>
+
+</body>
+</html>
