@@ -565,7 +565,238 @@ footer{
   }
 
 }
+.copilot-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+  margin-top:35px;
+}
 
+.copilot-screen{
+  background:#071522;
+  border:1px solid #29465b;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 25px 80px rgba(0,0,0,.28);
+}
+
+.screen-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:15px;
+  border-bottom:1px solid #1a3449;
+  font-size:13px;
+}
+
+.screen-top span{
+  color:#71889a;
+  font-size:10px;
+}
+
+.live-dot{
+  color:#43dafa;
+  font-size:9px;
+  font-weight:900;
+}
+
+.conversation{
+  display:grid;
+  gap:13px;
+  margin-top:17px;
+}
+
+.speaker{
+  display:flex;
+  gap:11px;
+  background:#0c2032;
+  border:1px solid #203d54;
+  padding:13px;
+  border-radius:11px;
+}
+
+.avatar{
+  width:30px;
+  height:30px;
+  min-width:30px;
+  border-radius:50%;
+  background:#18364a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  font-weight:800;
+}
+
+.speaker small,
+.next-label,
+.ai-title{
+  color:#43dafa;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.speaker p{
+  color:#b4c4cf;
+  font-size:12px;
+  margin:4px 0 0;
+}
+
+.ai-box{
+  background:#0c2134;
+  border:1px solid #256078;
+  border-radius:11px;
+  padding:15px;
+}
+
+.ai-title{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.ai-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:10px;
+}
+
+.ai-tags span{
+  font-size:8px;
+  color:#a9dce8;
+  border:1px solid #24586c;
+  border-radius:20px;
+  padding:5px 8px;
+}
+
+.ai-recommendation{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+
+.ai-recommendation div{
+  background:#081a29;
+  border-radius:8px;
+  padding:10px;
+}
+
+.ai-recommendation small{
+  display:block;
+  color:#73899a;
+  font-size:8px;
+}
+
+.ai-recommendation strong{
+  display:block;
+  margin-top:3px;
+  font-size:14px;
+}
+
+.next-action{
+  background:#102638;
+  border:1px solid #27677e;
+  border-radius:11px;
+  padding:16px;
+}
+
+.next-action h3{
+  font-size:17px;
+  margin:7px 0 12px;
+}
+
+.action-row{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:8px 0;
+  border-top:1px solid #203d51;
+}
+
+.action-row span{
+  width:22px;
+  height:22px;
+  min-width:22px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#183c4e;
+  color:#43dafa;
+  font-size:9px;
+  font-weight:900;
+}
+
+.action-row p{
+  margin:0;
+  color:#9fb4c2;
+  font-size:11px;
+}
+
+.copilot-content h2{
+  margin-top:0;
+}
+
+.copilot-points{
+  margin-top:28px;
+  display:grid;
+  gap:15px;
+}
+
+.copilot-points > div{
+  display:flex;
+  gap:13px;
+  padding-bottom:14px;
+  border-bottom:1px solid #1a3448;
+}
+
+.copilot-points span{
+  color:#43dafa;
+  font-size:10px;
+  font-weight:900;
+}
+
+.copilot-points h3{
+  margin:0 0 3px;
+  font-size:16px;
+}
+
+.copilot-points p{
+  margin:0;
+  color:#8fa5b6;
+  font-size:12px;
+}
+
+.mini-flow{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:7px;
+  margin-top:25px;
+}
+
+.mini-flow span{
+  background:#0c2133;
+  border:1px solid #23465c;
+  border-radius:8px;
+  padding:9px 12px;
+  font-size:10px;
+  color:#b8c8d2;
+}
+
+.mini-flow b{
+  color:#43dafa;
+}
+
+@media(max-width:950px){
+  .copilot-grid{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
@@ -850,75 +1081,215 @@ footer{
 
 <!-- COUNSELLOR -->
 
-<section class="dark">
+<section class="dark" id="copilot">
 
   <div class="container">
 
-    <div class="label">FOR COUNSELLORS</div>
+    <div class="label">AI SALES COPILOT</div>
 
-    <h2>
-      Don't Ask “What Should I Do With This Lead?”<br>
-      <span class="gradient">Let AI Help You Decide.</span>
-    </h2>
+    <div class="copilot-grid">
 
-    <p class="sub">
-      After the human conversation, AdmitFlow AI converts the interaction
-      into a practical next-step plan.
-    </p>
+      <!-- LEFT : AI PRODUCT SCREEN -->
 
-    <div class="grid">
+      <div class="copilot-screen">
 
-      <div class="box">
-        <b>LEAD INTENT</b>
-        <h3>Hot / Warm / Cold</h3>
-        <p>
-          Know which opportunities need attention first.
-        </p>
+        <div class="screen-top">
+          <div>
+            <strong>AdmitFlow AI</strong>
+            <span>• Conversation Intelligence</span>
+          </div>
+
+          <div class="live-dot">● ANALYSING</div>
+        </div>
+
+        <div class="conversation">
+
+          <div class="speaker">
+            <span class="avatar">S</span>
+
+            <div>
+              <small>STUDENT</small>
+
+              <p>
+                Sir, fees thodi high lag rahi hai.
+                Parents se discuss karna padega.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="ai-box">
+
+            <div class="ai-title">
+              <span>✦</span> AI UNDERSTANDING
+            </div>
+
+            <div class="ai-tags">
+
+              <span>HIGH INTENT</span>
+              <span>FEE OBJECTION</span>
+              <span>PARENT APPROVAL</span>
+
+            </div>
+
+            <div class="ai-recommendation">
+
+              <div>
+                <small>LEAD SCORE</small>
+                <strong>87 / 100</strong>
+              </div>
+
+              <div>
+                <small>STATUS</small>
+                <strong>WARM → HOT</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="next-action">
+
+            <div class="next-label">
+              AI NEXT BEST ACTION
+            </div>
+
+            <h3>
+              Don't lose the lead after the call.
+            </h3>
+
+            <div class="action-row">
+
+              <span>1</span>
+
+              <p>
+                Ask about the parent's concern before discussing discount.
+              </p>
+
+            </div>
+
+            <div class="action-row">
+
+              <span>2</span>
+
+              <p>
+                Send fee + scholarship information on WhatsApp.
+              </p>
+
+            </div>
+
+            <div class="action-row">
+
+              <span>3</span>
+
+              <p>
+                Schedule parent follow-up tomorrow at 6 PM.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="box">
-        <b>CONVERSATION</b>
-        <h3>What Happened?</h3>
-        <p>
-          Understand intent, objection, decision stage and conversation signals.
-        </p>
-      </div>
 
-      <div class="box">
-        <b>NEXT ACTION</b>
-        <h3>What Should I Do?</h3>
-        <p>
-          Call, WhatsApp, email, callback, nurture or recovery.
-        </p>
-      </div>
+      <!-- RIGHT : EXPLANATION -->
 
-      <div class="box">
-        <b>WHAT TO SAY</b>
-        <h3>Conversation Support</h3>
-        <p>
-          AI can prepare the next questions and objection-handling suggestions.
-        </p>
-      </div>
+      <div class="copilot-content">
 
-      <div class="box">
-        <b>WHAT TO SEND</b>
-        <h3>Relevant Follow-up</h3>
-        <p>
-          Suggested WhatsApp, email, brochure, poster or information.
-        </p>
-      </div>
+        <h2>
+          Every Conversation Should End With
+          <span class="gradient">A Clear Next Move.</span>
+        </h2>
 
-      <div class="box">
-        <b>WHEN</b>
-        <h3>Right Follow-up Timing</h3>
-        <p>
-          Every active opportunity gets a clear follow-up time and next step.
+        <p class="sub">
+          Your counsellor talks normally with the student or parent.
+          AdmitFlow AI understands the conversation and helps decide
+          what should happen next.
         </p>
+
+
+        <div class="copilot-points">
+
+          <div>
+
+            <span>01</span>
+
+            <div>
+
+              <h3>Understand</h3>
+
+              <p>
+                Detect intent, objections, decision stage and important
+                conversation signals.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <span>02</span>
+
+            <div>
+
+              <h3>Prioritise</h3>
+
+              <p>
+                Know which leads need attention first and which
+                opportunities may be worth recovering.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <span>03</span>
+
+            <div>
+
+              <h3>Act</h3>
+
+              <p>
+                Know what to say, what to send and when to follow up.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="mini-flow">
+
+          <span>Human Call</span>
+
+          <b>→</b>
+
+          <span>AI Understands</span>
+
+          <b>→</b>
+
+          <span>Next Action</span>
+
+        </div>
+
       </div>
 
     </div>
 
   </div>
+
+</section>
 
 </section>
 
