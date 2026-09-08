@@ -1042,8 +1042,6 @@ h1{
   </main>
 
 </div>
-
-
 <script>
 
 function showView(viewId, button){
@@ -1059,75 +1057,35 @@ function showView(viewId, button){
   });
 
   button.classList.add('active');
-
 }
 
 function openAction(){
 
-  const panel = document.getElementById("ai-action");
+  const panel = document.getElementById('ai-action');
 
-  panel.style.display = "block";
-  panel.style.position = "fixed";
-  panel.style.top = "50%";
-  panel.style.left = "50%";
-  panel.style.transform = "translate(-50%, -50%)";
-  panel.style.width = "min(900px, 90vw)";
-  panel.style.maxHeight = "85vh";
-  panel.style.overflow = "auto";
-  panel.style.zIndex = "99999";
-  panel.style.margin = "0";
-  panel.style.boxShadow = "0 30px 100px rgba(0,0,0,.65)";
-
+  panel.style.display = 'block';
+  panel.style.position = 'fixed';
+  panel.style.top = '50%';
+  panel.style.left = '50%';
+  panel.style.transform = 'translate(-50%, -50%)';
+  panel.style.width = 'min(900px, 90vw)';
+  panel.style.maxHeight = '85vh';
+  panel.style.overflow = 'auto';
+  panel.style.zIndex = '99999';
+  panel.style.margin = '0';
+  panel.style.boxShadow = '0 30px 100px rgba(0,0,0,.65)';
 }
 
 function closeAction(){
 
-  const panel = document.getElementById("ai-action");
+  const panel = document.getElementById('ai-action');
 
-  panel.style.display = "none";
-
-}
-
-</script>
-
-function showView(viewId, button){
-
-  document.querySelectorAll('.view').forEach(function(view){
-    view.classList.remove('active');
-  });
-
-  document.getElementById(viewId).classList.add('active');
-
-  document.querySelectorAll('.nav button').forEach(function(btn){
-    btn.classList.remove('active');
-  });
-
-  button.classList.add('active');
+  panel.style.display = 'none';
 
 }
-function openAction(){
-function closeAction(){
 
-  const panel = document.getElementById("ai-action");
-
-  panel.style.display = "none";
-
-}
-  const panel = document.getElementById("ai-action");
-
-  panel.style.display = "block";
-  panel.style.position = "fixed";
-  panel.style.top = "50%";
-  panel.style.left = "50%";
-  panel.style.transform = "translate(-50%, -50%)";
-  panel.style.width = "min(900px, 90vw)";
-  panel.style.maxHeight = "85vh";
-  panel.style.overflow = "auto";
-  panel.style.zIndex = "99999";
-  panel.style.margin = "0";
-  panel.style.boxShadow = "0 30px 100px rgba(0,0,0,.65)";
-}
 </script>
 
 </body>
 </html>
+
