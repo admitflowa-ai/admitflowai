@@ -447,6 +447,17 @@ h1{
 }
   #ai-action:target{
   display:block;
+    }
+    .action-modal{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:min(900px,90%);
+  max-height:85vh;
+  overflow:auto;
+  z-index:2000;
+  box-shadow:0 30px 100px rgba(0,0,0,.55);
 </style>
 </head>
 
@@ -950,7 +961,7 @@ h1{
     </div>
 <!-- AI ACTION PANEL -->
 
-<div id="ai-action" class="panel" style="margin:0 35px 30px;">
+<div id="ai-action" class="panel action-modal" style="margin:0;">
 
   <div class="panel-head">
     <div>
