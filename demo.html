@@ -963,8 +963,9 @@ h1{
 <!-- AI ACTION PANEL -->
 
 <div id="ai-action" class="panel action-modal" style="margin:0;">
-<button onclick="closeAction()"
-style="float:right;background:transparent;border:1px solid #31506a;color:white;border-radius:7px;padding:6px 10px;cursor:pointer;">
+<button
+  onclick="document.getElementById('ai-action').style.display='none'; history.replaceState(null, '', window.location.pathname + window.location.search);"
+  style="float:right;background:transparent;border:1px solid #31506a;color:white;border-radius:7px;padding:6px 10px;cursor:pointer;">
   ✕
 </button>
   <div class="panel-head">
