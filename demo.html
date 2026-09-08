@@ -588,9 +588,9 @@ h1{
                   Understand the parent's concern before offering a discount.
                 </p>
 
-           <a class="action-button" href="#ai-action">
+ <button class="action-button" onclick="openAction()">
   Open Action
-</a>
+</button>
 
               </div>
 
@@ -1056,7 +1056,22 @@ function showView(viewId, button){
   button.classList.add('active');
 
 }
+function openAction(){
 
+  const panel = document.getElementById("ai-action");
+
+  panel.style.display = "block";
+  panel.style.position = "fixed";
+  panel.style.top = "50%";
+  panel.style.left = "50%";
+  panel.style.transform = "translate(-50%, -50%)";
+  panel.style.width = "min(900px, 90vw)";
+  panel.style.maxHeight = "85vh";
+  panel.style.overflow = "auto";
+  panel.style.zIndex = "99999";
+  panel.style.margin = "0";
+  panel.style.boxShadow = "0 30px 100px rgba(0,0,0,.65)";
+}
 </script>
 
 </body>
