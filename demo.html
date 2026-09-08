@@ -442,7 +442,11 @@ h1{
   .topbar{
     padding:0 20px;
   }
+  #ai-action{
+  display:none;
 }
+  #ai-action:target{
+  display:block;
 </style>
 </head>
 
@@ -572,7 +576,9 @@ h1{
                   Understand the parent's concern before offering a discount.
                 </p>
 
-                <a class="action-button">Open Action</a>
+           <a class="action-button" href="#ai-action">
+  Open Action
+</a>
 
               </div>
 
@@ -942,7 +948,80 @@ h1{
       </div>
 
     </div>
+<!-- AI ACTION PANEL -->
 
+<div id="ai-action" class="panel" style="margin:0 35px 30px;">
+
+  <div class="panel-head">
+    <div>
+      <div class="eyebrow">AI ACTION CENTER</div>
+      <h3 style="margin:5px 0 0;">Rahul Sharma — Next Best Action</h3>
+    </div>
+
+    <div class="tag">HIGH INTENT</div>
+  </div>
+
+  <div class="dashboard-grid">
+
+    <div>
+
+      <div class="row">
+        <span>Lead Score</span>
+        <strong>87 / 100</strong>
+      </div>
+
+      <div class="row">
+        <span>Current Stage</span>
+        <strong>Counselling Completed</strong>
+      </div>
+
+      <div class="row">
+        <span>Main Objection</span>
+        <strong>Fee + Parent Approval</strong>
+      </div>
+
+      <div class="row">
+        <span>Last Contact</span>
+        <strong>Yesterday</strong>
+      </div>
+
+    </div>
+
+
+    <div>
+
+      <div class="action-box">
+
+        <small>AI RECOMMENDATION</small>
+
+        <strong>Call Parent Tomorrow at 6 PM</strong>
+
+        <p>
+          Student intent is strong. Focus first on understanding
+          the parent's concern before discussing any discount.
+        </p>
+
+      </div>
+
+      <div class="action-box">
+
+        <small>SUGGESTED WHATSAPP</small>
+
+        <strong>Message Ready</strong>
+
+        <p>
+          Hi Rahul, as discussed, sharing the course and scholarship
+          details. Please review them with your parents and I’ll connect
+          with you tomorrow evening.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
   </main>
 
 </div>
