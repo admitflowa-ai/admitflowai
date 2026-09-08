@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AdmitFlow AI — Product Demo</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#06111f;
+  color:#f4f8fb;
+}
+
+button{
+  font:inherit;
+}
+
+.app{
+  min-height:100vh;
+  display:flex;
+}
+
+.sidebar{
+  width:245px;
+  background:#081827;
+  border-right:1px solid #1a3449;
+  padding:22px 16px;
+  position:fixed;
+  top:0;
+  bottom:0;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 8px 24px;
+  border-bottom:1px solid #1b3549;
+}
+
+.logo img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+.logo strong{
+  font-size:18px;
+}
+
+.logo span{
+  color:#43dafa;
+}
+
+.demo-badge{
+  margin:20px 8px;
+  font-size:9px;
+  color:#43dafa;
+  border:1px solid #24576d;
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.nav{
+  display:grid;
+  gap:6px;
+}
+
+.nav button{
+  border:0;
+  background:transparent;
+  color:#8ea4b5;
+  text-align:left;
+  padding:12px 13px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.nav button:hover,
+.nav button.active{
+  background:#10283b;
+  color:#ffffff;
+}
+
+.main{
+  margin-left:245px;
+  width:calc(100% - 245px);
+  min-height:100vh;
+}
+
+.topbar{
+  height:78px;
+  border-bottom:1px solid #1a3449;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 32px;
+  background:rgba(6,17,31,.92);
+}
+
+.topbar small{
+  color:#71899c;
+}
+
+.topbar strong{
+  font-size:15px;
+}
+
+.demo-user{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatar{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  background:#14374a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#43dafa;
+  font-weight:800;
+}
+
+.content{
+  padding:35px;
+}
+
+.view{
+  display:none;
+}
+
+.view.active{
+  display:block;
+}
+
+.eyebrow{
+  color:#43dafa;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+h1{
+  font-size:40px;
+  letter-spacing:-1.5px;
+  margin:8px 0 10px;
+}
+
+.subtitle{
+  color:#91a8b9;
+  max-width:760px;
+  line-height:1.6;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:28px;
+}
+
+.stat-card,
+.panel{
+  background:#0a1b2c;
+  border:1px solid #203d54;
+  border-radius:14px;
+}
+
+.stat-card{
+  padding:19px;
+}
+
+.stat-card small{
+  display:block;
+  color:#71899c;
+  font-size:10px;
+}
+
+.stat-card strong{
+  display:block;
+  font-size:26px;
+  margin-top:5px;
+}
+
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.panel{
+  padding:20px;
+}
+
+.panel h3{
+  margin:0 0 16px;
+  font-size:17px;
+}
+
+.panel-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.panel-head small{
+  color:#70879a;
+}
+
+.lead{
+  padding:14px 0;
+  border-bottom:1px solid #183247;
+}
+
+.lead:last-child{
+  border-bottom:0;
+}
+
+.lead-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.lead-name{
+  font-weight:750;
+}
+
+.score{
+  color:#43dafa;
+  font-size:11px;
+  font-weight:800;
+}
+
+.lead-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:7px;
+}
+
+.tag{
+  padding:4px 7px;
+  border-radius:15px;
+  border:1px solid #24475b;
+  color:#9bb6c5;
+  font-size:9px;
+}
+
+.action-box{
+  background:#0f2739;
+  border:1px solid #26627a;
+  border-radius:11px;
+  padding:15px;
+  margin-top:12px;
+}
+
+.action-box small{
+  color:#43dafa;
+  font-weight:900;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+.action-box strong{
+  display:block;
+  margin:6px 0;
+}
+
+.action-box p{
+  color:#9db2c0;
+  font-size:12px;
+  margin:0;
+  line-height:1.6;
+}
+
+.action-button{
+  margin-top:12px;
+  display:inline-block;
+  padding:9px 12px;
+  border-radius:8px;
+  background:#43dafa;
+  color:#03131d;
+  font-size:11px;
+  font-weight:900;
+}
+
+.progress{
+  height:8px;
+  background:#102536;
+  border-radius:10px;
+  overflow:hidden;
+  margin:10px 0 15px;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  background:#43dafa;
+  width:76%;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:11px 0;
+  border-bottom:1px solid #183247;
+  color:#9eb1bf;
+  font-size:12px;
+}
+
+.row:last-child{
+  border-bottom:0;
+}
+
+.row strong{
+  color:white;
+}
+
+.alert{
+  background:#101f2d;
+  border:1px solid #46516a;
+  border-radius:10px;
+  padding:13px;
+  margin-top:11px;
+}
+
+.alert strong{
+  display:block;
+  font-size:12px;
+}
+
+.alert p{
+  margin:4px 0 0;
+  color:#95aabd;
+  font-size:11px;
+}
+
+.green{
+  color:#55ddb0;
+}
+
+.yellow{
+  color:#f0c759;
+}
+
+.red{
+  color:#ff8f8f;
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin:24px 0;
+}
+
+.tabs button{
+  background:#0b1c2d;
+  border:1px solid #22435a;
+  color:#9cb0be;
+  padding:9px 13px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.tabs button.active{
+  border-color:#43dafa;
+  color:#43dafa;
+}
+
+.tab-content{
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+.footer-note{
+  margin-top:30px;
+  color:#607889;
+  font-size:10px;
+}
+
+@media(max-width:1000px){
+  .sidebar{
+    width:200px;
+  }
+
+  .main{
+    margin-left:200px;
+    width:calc(100% - 200px);
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .dashboard-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:700px){
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .content{
+    padding:20px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  .topbar{
+    padding:0 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      <img src="WhatsApp_Image_2026-09-06_at_8.11.03_AM-removebg-preview.png"
+           alt="AdmitFlow AI">
+      <strong>AdmitFlow <span>AI</span></strong>
+    </div>
+
+    <div class="demo-badge">INTERACTIVE DEMO</div>
+
+    <div class="nav">
+
+      <button class="active" onclick="showView('counsellor',this)">
+        Counsellor
+      </button>
+
+      <button onclick="showView('manager',this)">
+        Manager
+      </button>
+
+      <button onclick="showView('ceo',this)">
+        Owner / CEO
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <main class="main">
+
+    <div class="topbar">
+
+      <div>
+        <small>AdmitFlow AI Demo</small><br>
+        <strong>AI Admission Revenue OS</strong>
+      </div>
+
+      <div class="demo-user">
+        <span>Demo Institute</span>
+        <div class="avatar">A</div>
+      </div>
+
+    </div>
+
+
+    <div class="content">
+
+
+      <!-- COUNSELLOR -->
+
+      <section id="counsellor" class="view active">
+
+        <div class="eyebrow">COUNSELLOR COPILOT</div>
+
+        <h1>Know What To Do With Every Lead.</h1>
+
+        <p class="subtitle">
+          After every human conversation, AdmitFlow AI turns the interaction
+          into a clear next action for the counsellor.
+        </p>
+
+
+        <div class="stats">
+
+          <div class="stat-card">
+            <small>My Hot Leads</small>
+            <strong>12</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Follow-ups Due</small>
+            <strong>8</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Recovery Leads</small>
+            <strong>5</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Today's Admissions</small>
+            <strong>4</strong>
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+          <div class="panel">
+
+            <div class="panel-head">
+              <h3>Priority Leads</h3>
+              <small>AI ranked</small>
+            </div>
+
+
+            <div class="lead">
+
+              <div class="lead-top">
+                <div class="lead-name">Rahul Sharma</div>
+                <div class="score">87 / 100</div>
+              </div>
+
+              <div class="lead-meta">
+                <span class="tag">HOT</span>
+                <span class="tag">Fee Objection</span>
+                <span class="tag">Parent Approval</span>
+              </div>
+
+              <div class="action-box">
+
+                <small>AI NEXT BEST ACTION</small>
+
+                <strong>Call Parent Tomorrow</strong>
+
+                <p>
+                  Student is highly interested. Fee is the main blocker.
+                  Understand the parent's concern before offering a discount.
+                </p>
+
+                <a class="action-button">Open Action</a>
+
+              </div>
+
+            </div>
+
+
+            <div class="lead">
+
+              <div class="lead-top">
+                <div class="lead-name">Ananya Verma</div>
+                <div class="score">74 / 100</div>
+              </div>
+
+              <div class="lead-meta">
+                <span class="tag">WARM</span>
+                <span class="tag">Callback</span>
+              </div>
+
+              <div class="action-box">
+
+                <small>AI NEXT BEST ACTION</small>
+
+                <strong>Callback Today · 6:30 PM</strong>
+
+                <p>
+                  Lead requested a callback after discussing the course
+                  with parents.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="panel">
+
+            <h3>AI Follow-up Assistant</h3>
+
+            <div class="alert">
+
+              <strong>What should I send?</strong>
+
+              <p>
+                Fee concern detected → Send approved fee/scholarship information.
+              </p>
+
+            </div>
+
+            <div class="alert">
+
+              <strong>Suggested WhatsApp</strong>
+
+              <p>
+                “Hi Ananya, as discussed, sharing the course details and
+                available scholarship information for you and your parents.”
+              </p>
+
+            </div>
+
+            <div class="alert">
+
+              <strong>Follow-up Timing</strong>
+
+              <p>
+                Tomorrow · 6:30 PM
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- MANAGER -->
+
+      <section id="manager" class="view">
+
+        <div class="eyebrow">MANAGER COMMAND CENTER</div>
+
+        <h1>Know What Your Team Needs Today.</h1>
+
+        <p class="subtitle">
+          AdmitFlow AI turns team activity, lead movement and conversion
+          signals into a practical manager action plan.
+        </p>
+
+
+        <div class="stats">
+
+          <div class="stat-card">
+            <small>Team Target</small>
+            <strong>220</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Admissions</small>
+            <strong>164</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Hot Leads</small>
+            <strong>27</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Overdue</small>
+            <strong>18</strong>
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+          <div class="panel">
+
+            <h3>Team Target</h3>
+
+            <div class="row">
+              <span>Monthly Target</span>
+              <strong>220</strong>
+            </div>
+
+            <div class="row">
+              <span>Achieved</span>
+              <strong>164</strong>
+            </div>
+
+            <div class="row">
+              <span>AI Forecast</span>
+              <strong>198</strong>
+            </div>
+
+            <div class="row">
+              <span>Current Gap</span>
+              <strong class="yellow">22</strong>
+            </div>
+
+            <div class="progress">
+              <span></span>
+            </div>
+
+            <small>AI forecast based on current pipeline activity — illustrative.</small>
+
+          </div>
+
+
+          <div class="panel">
+
+            <h3>AI Manager Action Plan</h3>
+
+            <div class="alert">
+
+              <strong>Priority 1 · 9 Hot Leads</strong>
+
+              <p>
+                No meaningful next action scheduled.
+                Review immediately.
+              </p>
+
+            </div>
+
+            <div class="alert">
+
+              <strong>Priority 2 · 2 Counsellors</strong>
+
+              <p>
+                Post-counselling conversion is below team average.
+                Recommended: closing + objection training.
+              </p>
+
+            </div>
+
+            <div class="alert">
+
+              <strong>Priority 3 · 11 Recovery Leads</strong>
+
+              <p>
+                Launch AI-assisted re-engagement sequence.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel" style="margin-top:16px;">
+
+          <h3>Counsellor Coaching Signals</h3>
+
+          <div class="row">
+            <span>Rahul · Follow-up</span>
+            <strong class="yellow">Needs Attention</strong>
+          </div>
+
+          <div class="row">
+            <span>Amit · Objection Handling</span>
+            <strong class="yellow">Training Recommended</strong>
+          </div>
+
+          <div class="row">
+            <span>Priya · Conversion</span>
+            <strong class="green">Strong</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- CEO -->
+
+      <section id="ceo" class="view">
+
+        <div class="eyebrow">OWNER / CEO INTELLIGENCE</div>
+
+        <h1>See What Is Happening. Know What To Do Next.</h1>
+
+        <p class="subtitle">
+          AdmitFlow AI turns admission, team, recovery and marketing signals
+          into a simple management view.
+        </p>
+
+
+        <div class="stats">
+
+          <div class="stat-card">
+            <small>Revenue Target</small>
+            <strong>₹50L</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Actual Revenue</small>
+            <strong>₹38.6L</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>AI Forecast</small>
+            <strong>₹46.2L</strong>
+          </div>
+
+          <div class="stat-card">
+            <small>Recovery Opportunities</small>
+            <strong>31</strong>
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+          <div class="panel">
+
+            <h3>Business Health</h3>
+
+            <div class="row">
+              <span>Admission Health</span>
+              <strong>74 / 100</strong>
+            </div>
+
+            <div class="row">
+              <span>Lead Quality</span>
+              <strong>81</strong>
+            </div>
+
+            <div class="row">
+              <span>Follow-up</span>
+              <strong class="yellow">59</strong>
+            </div>
+
+            <div class="row">
+              <span>Counselling</span>
+              <strong>77</strong>
+            </div>
+
+            <div class="row">
+              <span>Recovery</span>
+              <strong class="red">43</strong>
+            </div>
+
+            <div class="row">
+              <span>Team Execution</span>
+              <strong>72</strong>
+            </div>
+
+          </div>
+
+
+          <div class="panel">
+
+            <h3>AI CEO Recommendation</h3>
+
+            <div class="action-box">
+
+              <small>MAIN RISK</small>
+
+              <strong>Post-counselling conversion is below target.</strong>
+
+              <p>
+                Lead volume is healthy, but follow-up and conversion behaviour
+                is creating a revenue gap.
+              </p>
+
+            </div>
+
+            <div class="action-box">
+
+              <small>WHAT TO DO NEXT</small>
+
+              <strong>Fix conversion before increasing lead spend.</strong>
+
+              <p>
+                Coach affected counsellors → launch recovery →
+                review follow-up discipline → then reassess acquisition spend.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="panel" style="margin-top:16px;">
+
+          <h3>AI Monthly Business Brief</h3>
+
+          <div class="row">
+            <span>Target vs Actual</span>
+            <strong>₹50L → ₹38.6L</strong>
+          </div>
+
+          <div class="row">
+            <span>Forecast</span>
+            <strong>₹46.2L</strong>
+          </div>
+
+          <div class="row">
+            <span>Primary Leakage</span>
+            <strong>Post-Counselling</strong>
+          </div>
+
+          <div class="row">
+            <span>Recovery Opportunity</span>
+            <strong>31 Leads</strong>
+          </div>
+
+          <div class="row">
+            <span>Recommended Priority</span>
+            <strong>Follow-up + Team Coaching</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <div class="footer-note">
+        Demonstration interface. Metrics and examples shown are illustrative.
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<script>
+
+function showView(viewId, button){
+
+  document.querySelectorAll('.view').forEach(function(view){
+    view.classList.remove('active');
+  });
+
+  document.getElementById(viewId).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(function(btn){
+    btn.classList.remove('active');
+  });
+
+  button.classList.add('active');
+
+}
+
+</script>
+
+</body>
+</html>
