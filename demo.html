@@ -963,7 +963,10 @@ h1{
 <!-- AI ACTION PANEL -->
 
 <div id="ai-action" class="panel action-modal" style="margin:0;">
-
+<button onclick="closeAction()"
+style="float:right;background:transparent;border:1px solid #31506a;color:white;border-radius:7px;padding:6px 10px;cursor:pointer;">
+  ✕
+</button>
   <div class="panel-head">
     <div>
       <div class="eyebrow">AI ACTION CENTER</div>
@@ -1057,7 +1060,13 @@ function showView(viewId, button){
 
 }
 function openAction(){
+function closeAction(){
 
+  const panel = document.getElementById("ai-action");
+
+  panel.style.display = "none";
+
+}
   const panel = document.getElementById("ai-action");
 
   panel.style.display = "block";
