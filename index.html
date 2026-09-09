@@ -797,6 +797,50 @@ footer{
     grid-template-columns:1fr;
   }
 }
+  .social-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:26px;
+}
+
+.social-links a{
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #25435a;
+  border-radius:10px;
+  background:#0a1b2b;
+  color:#9fb3c2;
+  transition:.2s ease;
+}
+
+.social-links a:hover{
+  color:#43dafa;
+  border-color:#43dafa;
+  transform:translateY(-2px);
+}
+
+.social-links svg{
+  width:19px;
+  height:19px;
+  fill:currentColor;
+}
+
+.social-links svg rect,
+.social-links svg circle{
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+}
+
+.social-links svg circle:last-child{
+  fill:currentColor;
+  stroke:none;
+}
 </style>
 </head>
 
@@ -2166,27 +2210,46 @@ management a clearer view of enrollment growth.
 
   </div>
 
-  <div style="text-align:center;margin-top:25px;">
+  <div class="social-links">
 
-    <a href="https://www.linkedin.com/company/144892955/"
-       target="_blank"
-       style="margin:0 10px;color:#0A66C2;font-size:25px;">
-       in
-    </a>
+  <a href="https://www.linkedin.com/company/144892955/"
+     target="_blank"
+     rel="noopener"
+     aria-label="LinkedIn">
 
-    <a href="https://www.facebook.com/share/1BoX7TQnZ4/"
-       target="_blank"
-       style="margin:0 10px;color:#1877F2;font-size:25px;">
-       f
-    </a>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6.5 8.5H3.2V21h3.3V8.5ZM4.85 3A1.95 1.95 0 1 0 4.85 6.9 1.95 1.95 0 0 0 4.85 3ZM21 13.85C21 10.08 18.95 8.1 16.2 8.1c-1.4 0-2.34.77-2.75 1.46v-1.06h-3.3V21h3.3v-6.2c0-1.64.31-3.23 2.35-3.23 2.01 0 2.03 1.88 2.03 3.34V21H21v-7.15Z"/>
+    </svg>
 
-    <a href="https://www.instagram.com/admitflowai/"
-       target="_blank"
-       style="margin:0 10px;color:#E1306C;font-size:25px;">
-       ◎
-    </a>
+  </a>
 
-  </div>
+
+  <a href="https://www.facebook.com/share/1BoX7TQnZ4/"
+     target="_blank"
+     rel="noopener"
+     aria-label="Facebook">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 8h3V4.2c-.52-.07-2.02-.2-3.73-.2C9.88 4 8 5.49 8 9.08V12H5v4h3v8h4v-8h3.5l.5-4H12V9.53C12 8.42 12.3 8 14 8Z"/>
+    </svg>
+
+  </a>
+
+
+  <a href="https://www.instagram.com/admitflowai/"
+     target="_blank"
+     rel="noopener"
+     aria-label="Instagram">
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17.5" cy="6.5" r="1"></circle>
+    </svg>
+
+  </a>
+
+</div>
 
 </footer>
 
