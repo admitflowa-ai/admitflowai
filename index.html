@@ -398,6 +398,69 @@
         grid-template-columns: 1fr;
       }
     }
+    /* MANAGEMENT INTELLIGENCE FLOW */
+    .management-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 34px 0 42px;
+    }
+
+    .management-flow-step {
+      min-height: 118px;
+      padding: 20px 18px;
+      background: linear-gradient(145deg, rgba(20,28,45,.96), rgba(10,16,29,.96));
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.16);
+    }
+
+    .management-flow-step span {
+      display: block;
+      margin-bottom: 16px;
+      color: #7dd3fc;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .management-flow-step strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .management-flow-step small {
+      display: block;
+      color: rgba(226,232,240,.62);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .management-flow-arrow {
+      color: #7dd3fc;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .management-flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .management-flow-arrow {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .management-flow {
+        grid-template-columns: 1fr;
+      }
+    }
     /* HERO DASHBOARD PREVIEW */
     .hero-dashboard {
       background: linear-gradient(145deg, rgba(20,28,45,.98), rgba(10,16,29,.98));
@@ -1293,6 +1356,31 @@
           <span class="gradient">they need to act.</span>
         </h2>
 
+        <div class="management-flow">
+          <div class="management-flow-step">
+            <span>01</span>
+            <strong>CRM Activity</strong>
+            <small>Leads, calls & follow-ups</small>
+          </div>
+          <div class="management-flow-arrow">→</div>
+          <div class="management-flow-step">
+            <span>02</span>
+            <strong>Team Signals</strong>
+            <small>Risk, intent & performance</small>
+          </div>
+          <div class="management-flow-arrow">→</div>
+          <div class="management-flow-step">
+            <span>03</span>
+            <strong>Management Visibility</strong>
+            <small>Funnel & intervention signals</small>
+          </div>
+          <div class="management-flow-arrow">→</div>
+          <div class="management-flow-step">
+            <span>04</span>
+            <strong>Action Priorities</strong>
+            <small>Where to intervene next</small>
+          </div>
+        </div>
         <div class="grid grid-3" style="margin-top:45px;">
 
           <div class="card intel-card">
