@@ -461,6 +461,111 @@
         grid-template-columns: 1fr;
       }
     }
+    /* MANAGEMENT MINI DASHBOARD */
+    .management-dashboard {
+      margin: 34px 0 42px;
+      padding: 22px;
+      background: linear-gradient(145deg, rgba(20,28,45,.98), rgba(10,16,29,.98));
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: 20px;
+      box-shadow: 0 22px 55px rgba(0,0,0,.22);
+    }
+
+    .management-dashboard-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 16px;
+    }
+
+    .management-dashboard-head strong {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .management-dashboard-head span {
+      color: rgba(226,232,240,.55);
+      font-size: 11px;
+    }
+
+    .management-dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .management-dashboard-card {
+      padding: 18px;
+      background: rgba(15,23,42,.72);
+      border: 1px solid rgba(148,163,184,.12);
+      border-radius: 14px;
+    }
+
+    .management-dashboard-card small {
+      display: block;
+      color: rgba(226,232,240,.55);
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+
+    .management-dashboard-card strong {
+      display: block;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .management-dashboard-card span {
+      color: #7dd3fc;
+      font-size: 11px;
+    }
+
+    .management-dashboard-actions {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .management-dashboard-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 13px 15px;
+      background: rgba(15,23,42,.58);
+      border: 1px solid rgba(148,163,184,.10);
+      border-radius: 12px;
+    }
+
+    .management-dashboard-action span {
+      color: rgba(226,232,240,.72);
+      font-size: 12px;
+    }
+
+    .management-dashboard-action b {
+      color: #7dd3fc;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 700px) {
+      .management-dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .management-dashboard-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .management-dashboard-action {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
     /* HERO DASHBOARD PREVIEW */
     .hero-dashboard {
       background: linear-gradient(145deg, rgba(20,28,45,.98), rgba(10,16,29,.98));
@@ -1379,6 +1484,49 @@
             <span>04</span>
             <strong>Action Priorities</strong>
             <small>Where to intervene next</small>
+          </div>
+        </div>
+        <div class="management-dashboard">
+          <div class="management-dashboard-head">
+            <strong>Management Intelligence</strong>
+            <span>Illustrative dashboard view</span>
+          </div>
+
+          <div class="management-dashboard-grid">
+            <div class="management-dashboard-card">
+              <small>Follow-up Risk</small>
+              <strong>32</strong>
+              <span>Needs review</span>
+            </div>
+
+            <div class="management-dashboard-card">
+              <small>Recovery Opportunities</small>
+              <strong>18</strong>
+              <span>Signals detected</span>
+            </div>
+
+            <div class="management-dashboard-card">
+              <small>Team Priorities</small>
+              <strong>07</strong>
+              <span>Actions to review</span>
+            </div>
+          </div>
+
+          <div class="management-dashboard-actions">
+            <div class="management-dashboard-action">
+              <span>High-intent follow-ups</span>
+              <b>Review priority</b>
+            </div>
+
+            <div class="management-dashboard-action">
+              <span>Post-counselling drop-offs</span>
+              <b>Review funnel</b>
+            </div>
+
+            <div class="management-dashboard-action">
+              <span>Inactive lead signals</span>
+              <b>Review recovery</b>
+            </div>
           </div>
         </div>
         <div class="grid grid-3" style="margin-top:45px;">
