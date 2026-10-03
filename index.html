@@ -335,6 +335,69 @@
       font-size: 14px;
       line-height: 1.65;
     }
+    /* LEAD RECOVERY FLOW */
+    #recovery .recovery-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin: 34px 0 40px;
+    }
+
+    #recovery .recovery-flow-step {
+      min-height: 118px;
+      padding: 20px 18px;
+      background: linear-gradient(145deg, rgba(20,28,45,.96), rgba(10,16,29,.96));
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.16);
+    }
+
+    #recovery .recovery-flow-step span {
+      display: block;
+      margin-bottom: 16px;
+      color: #7dd3fc;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    #recovery .recovery-flow-step strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    #recovery .recovery-flow-step small {
+      display: block;
+      color: rgba(226,232,240,.62);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    #recovery .recovery-flow-arrow {
+      color: #7dd3fc;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      #recovery .recovery-flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #recovery .recovery-flow-arrow {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #recovery .recovery-flow {
+        grid-template-columns: 1fr;
+      }
+    }
     /* HERO DASHBOARD PREVIEW */
     .hero-dashboard {
       background: linear-gradient(145deg, rgba(20,28,45,.98), rgba(10,16,29,.98));
@@ -1275,7 +1338,32 @@
     <section class="section">
       <div class="container">
 
-        <div class="grid grid-2">
+        <div class="recovery-flow">
+      <div class="recovery-flow-step">
+        <span>01</span>
+        <strong>Inactive / Lost Lead</strong>
+        <small>Lead stops progressing</small>
+      </div>
+      <div class="recovery-flow-arrow">→</div>
+      <div class="recovery-flow-step">
+        <span>02</span>
+        <strong>Signal Review</strong>
+        <small>CRM activity and follow-up signals</small>
+      </div>
+      <div class="recovery-flow-arrow">→</div>
+      <div class="recovery-flow-step">
+        <span>03</span>
+        <strong>Recovery Opportunity</strong>
+        <small>Observable recovery signals</small>
+      </div>
+      <div class="recovery-flow-arrow">→</div>
+      <div class="recovery-flow-step">
+        <span>04</span>
+        <strong>Next Best Action</strong>
+        <small>Prioritized follow-up action</small>
+      </div>
+    </div>
+    <div class="grid grid-2">
 
           <div>
             <div class="label">BUILT AROUND YOUR EXISTING SYSTEM</div>
