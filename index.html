@@ -214,6 +214,132 @@
       padding: 100px 0 90px;
     }
 
+
+
+    /* HERO DASHBOARD PREVIEW */
+    .hero-dashboard {
+      background: linear-gradient(145deg, rgba(20,28,45,.98), rgba(10,16,29,.98));
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .dashboard-top,
+    .panel-head,
+    .lead-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dashboard-top {
+      color: #9aa9bd;
+      font-size: 12px;
+      margin-bottom: 22px;
+    }
+
+    .dashboard-top span:first-child {
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .dashboard-title {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .dashboard-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .dashboard-metrics > div {
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .dashboard-metrics small {
+      display: block;
+      color: #8998ad;
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+
+    .dashboard-metrics strong {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .dashboard-panel {
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 13px 15px;
+      color: #9aa9bd;
+      font-size: 11px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .panel-head span:first-child {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .lead-row {
+      padding: 14px 15px;
+      color: #c5cfdd;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .lead-row:last-child {
+      border-bottom: 0;
+    }
+
+    .lead-row b {
+      color: #7dd3fc;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 1000px;
+      }
+
+      .hero-dashboard {
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* HERO VISUAL UPGRADE */
+    .hero .container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+      gap: 70px;
+      align-items: center;
+    }
     .hero-copy {
       max-width: 1000px;
     }
@@ -681,7 +807,27 @@
           </p>
 
         </div>
-      </div>
+        <div class="hero-dashboard">
+          <div class="dashboard-top">
+            <span>AdmitFlow AI</span>
+            <span>Owner / CEO</span>
+          </div>
+          <div class="dashboard-title">Admission Revenue Intelligence</div>
+          <div class="dashboard-metrics">
+            <div><small>Active Leads</small><strong>248</strong></div>
+            <div><small>Follow-up Risk</small><strong>32</strong></div>
+            <div><small>Recovery Opportunities</small><strong>18</strong></div>
+          </div>
+          <div class="dashboard-panel">
+            <div class="panel-head">
+              <span>Lead Intelligence</span>
+              <span>Next Best Action</span>
+            </div>
+            <div class="lead-row"><span>High Intent Lead</span><b>Follow Up Now</b></div>
+            <div class="lead-row"><span>Stalled Enquiry</span><b>Re-engagement</b></div>
+            <div class="lead-row"><span>Inactive Lead</span><b>Recovery Review</b></div>
+          </div>
+        </div>      </div>
     </section>
 
 
